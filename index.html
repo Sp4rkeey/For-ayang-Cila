@@ -4,298 +4,61 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Cila ❤️</title>
-
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:linear-gradient(135deg,#12000d,#2d0018,#450028);
-overflow:hidden;
-color:white;
-height:100vh;
-}
-
-.page{
-display:none;
-height:100vh;
-width:100%;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-padding:20px;
-text-align:center;
-animation:fade .8s;
-}
-
-.active{
-display:flex;
-}
-
-@keyframes fade{
-from{opacity:0;transform:scale(.9);}
-to{opacity:1;transform:scale(1);}
-}
-
-h1{
-font-size:3rem;
-color:#ff9ac6;
-margin-bottom:15px;
-}
-
-h2{
-font-size:2rem;
-margin-bottom:20px;
-}
-
-p{
-max-width:700px;
-font-size:1.2rem;
-line-height:1.8;
-}
-
-img{
-width:280px;
-height:380px;
-object-fit:cover;
-border-radius:20px;
-box-shadow:0 0 30px #ff4d94;
-margin-bottom:20px;
-}
-
-button{
-padding:15px 35px;
-font-size:18px;
-border:none;
-border-radius:50px;
-cursor:pointer;
-background:#ff4d94;
-color:white;
-margin:10px;
-box-shadow:0 0 20px #ff4d94;
-}
-
-button:hover{
-transform:scale(1.1);
-}
-
-.floating{
-position:absolute;
-color:#ff9ac6;
-font-size:15px;
-animation:float 10s linear infinite;
-opacity:.8;
-}
-
-@keyframes float{
-0%{
-transform:translateY(100vh);
-}
-100%{
-transform:translateY(-100px);
-}
-}
-
-.heart{
-position:absolute;
-font-size:25px;
-animation:heart 8s linear infinite;
-}
-
-@keyframes heart{
-0%{
-transform:translateY(100vh);
-opacity:0;
-}
-100%{
-transform:translateY(-100px);
-opacity:1;
-}
-}
-
-#noBtn{
-position:absolute;
-}
-
+body{margin:0;font-family:Arial,sans-serif;background:#140012;color:white;overflow:hidden}
+.slide{display:none;height:100vh;justify-content:center;align-items:center;flex-direction:column;padding:20px;text-align:center}
+.active{display:flex}
+img{max-width:320px;max-height:60vh;border-radius:20px;box-shadow:0 0 25px #ff4fa0}
+button{padding:12px 24px;border:none;border-radius:25px;background:#ff4fa0;color:white;margin-top:15px}
+.float{position:fixed;color:rgba(255,192,203,.3);font-size:14px}
 </style>
 </head>
-
 <body>
+<audio id="bgm" loop><source src="music/perfect.mp3" type="audio/mpeg"></audio>
 
-<audio autoplay loop>
-<source src="music/perfect.mp3" type="audio/mpeg">
-</audio>
-
-<div id="floatingContainer"></div>
-
-<div class="page active" id="page0">
-<h1>For You, Cila ❤️</h1>
-<p>
-I have something special to tell you...
-</p>
-
-<br>
-
-<h3>Sent by your future, Fadel 💕</h3>
-
-<br>
-
-<button onclick="nextPage()">Open My Heart ❤️</button>
+<div class="slide active">
+<h1>For You ❤️</h1>
+<p>Sent by your future, Fadel 💕</p>
+<button onclick="start()">Open My Heart</button>
 </div>
 
-<div class="page">
-<img src="images/foto1.jpg">
-<p>Every time I see your smile, my whole day becomes better.</p>
-<button onclick="nextPage()">Next ❤️</button>
-</div>
+<div class="slide"><img src="images/foto1.jpg"><p>You make my days brighter.</p><button onclick="next()">Next</button></div>
+<div class="slide"><img src="images/foto2.jpg"><p>Your smile is my favorite.</p><button onclick="next()">Next</button></div>
+<div class="slide"><img src="images/foto3.jpg"><p>I love every moment with you.</p><button onclick="next()">Next</button></div>
+<div class="slide"><img src="images/foto4.jpg"><p>You are beautiful.</p><button onclick="next()">Next</button></div>
+<div class="slide"><img src="images/foto5.jpg"><p>You are amazing.</p><button onclick="next()">Next</button></div>
+<div class="slide"><img src="images/foto6.jpg"><p>You are my sunshine.</p><button onclick="next()">Next</button></div>
+<div class="slide"><img src="images/foto7.jpg"><p>I feel lucky to know you.</p><button onclick="next()">Next</button></div>
+<div class="slide"><img src="images/foto8.jpg"><p>You make me smile.</p><button onclick="next()">Next</button></div>
+<div class="slide"><img src="images/foto9.jpg"><p>My favorite person.</p><button onclick="next()">Next</button></div>
+<div class="slide"><img src="images/foto10.jpg"><p>One last question...</p><button onclick="next()">Continue</button></div>
 
-<div class="page">
-<img src="images/foto2.jpg">
-<p>You are one of the most beautiful people I've ever met.</p>
-<button onclick="nextPage()">Next ❤️</button>
-</div>
-
-<div class="page">
-<img src="images/foto3.jpg">
-<p>I don't know how, but you always make my heart feel calm.</p>
-<button onclick="nextPage()">Next ❤️</button>
-</div>
-
-<div class="page">
-<img src="images/foto4.jpg">
-<p>You are cute, kind, funny and amazing.</p>
-<button onclick="nextPage()">Next ❤️</button>
-</div>
-
-<div class="page">
-<img src="images/foto5.jpg">
-<p>Thank you for existing in my life.</p>
-<button onclick="nextPage()">Next ❤️</button>
-</div>
-
-<div class="page">
-<img src="images/foto6.jpg">
-<p>If I had to choose again, I'd still choose you.</p>
-<button onclick="nextPage()">Next ❤️</button>
-</div>
-
-<div class="page">
-<img src="images/foto7.jpg">
-<p>You make ordinary moments feel special.</p>
-<button onclick="nextPage()">Next ❤️</button>
-</div>
-
-<div class="page">
-<img src="images/foto8.jpg">
-<p>I could spend hours talking to you and never get bored.</p>
-<button onclick="nextPage()">Next ❤️</button>
-</div>
-
-<div class="page">
-<img src="images/foto9.jpg">
-<p>You are my favorite notification.</p>
-<button onclick="nextPage()">Next ❤️</button>
-</div>
-
-<div class="page">
-<img src="images/foto10.jpg">
-<p>And now I want to ask something important...</p>
-<button onclick="nextPage()">Continue ❤️</button>
-</div>
-
-<div class="page">
+<div class="slide">
 <h1>Will You Be My Girlfriend? ❤️</h1>
-
-<button onclick="nextPage()">YESSS 💕</button>
-<button id="noBtn">NO 😝</button>
+<button onclick="next()">YES</button>
+<button id="no">NO</button>
 </div>
 
-<div class="page">
-<h1>One More Question ❤️</h1>
-
-<h2>Will You Be My Wife? 💍</h2>
-
-<button onclick="nextPage()">OF COURSE 💖</button>
+<div class="slide">
+<h1>Will You Be My Wife Someday? 💍</h1>
+<button onclick="next()">YES ❤️</button>
 </div>
 
-<div class="page">
-<h1>YAYYYYYY ❤️</h1>
-
-<p>
-You just made me the happiest person in the world.
-<br><br>
-I promise I'll always care about you,
-support you,
-and make lots of beautiful memories together.
-<br><br>
-I Love You, Cila ❤️
-</p>
-
-<h2>- Fadel 💕</h2>
+<div class="slide">
+<h1>Scan This QR ❤️</h1>
+<img src="images/qr.png">
+<p>Thank you for reading until the end.</p>
 </div>
 
 <script>
-
-let current=0;
-const pages=document.querySelectorAll(".page");
-
-function nextPage(){
-pages[current].classList.remove("active");
-current++;
-pages[current].classList.add("active");
-}
-
-const words=[
-"I Love You ❤️",
-"You Are Beautiful ❤️",
-"Cila ❤️",
-"Future Wife 💍",
-"My Sunshine ☀️",
-"You Are Cute 💕",
-"My Favorite Person ❤️",
-"Pretty Girl 🌸",
-"Sweet Girl ❤️",
-"Forever ❤️",
-"Fadel ❤️ Cila",
-"You Are Amazing 💕",
-"My Happiness ❤️"
-];
-
-for(let i=0;i<80;i++){
-let span=document.createElement("span");
-span.className="floating";
-span.innerHTML=words[Math.floor(Math.random()*words.length)];
-span.style.left=Math.random()*100+"%";
-span.style.animationDuration=(6+Math.random()*8)+"s";
-document.body.appendChild(span);
-}
-
-for(let i=0;i<40;i++){
-let heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="💖";
-heart.style.left=Math.random()*100+"%";
-heart.style.animationDuration=(4+Math.random()*6)+"s";
-document.body.appendChild(heart);
-}
-
-const noBtn=document.getElementById("noBtn");
-
-noBtn.addEventListener("mouseover",()=>{
-noBtn.style.top=Math.random()*80+"%";
-noBtn.style.left=Math.random()*80+"%";
-});
-
-noBtn.addEventListener("click",()=>{
-noBtn.style.top=Math.random()*80+"%";
-noBtn.style.left=Math.random()*80+"%";
-});
-
+let i=0,s=document.querySelectorAll('.slide');
+function show(n){s[i].classList.remove('active');i=n;s[i].classList.add('active');}
+function next(){if(i<s.length-1)show(i+1);}
+function start(){document.getElementById('bgm').play();next();}
+const no=document.getElementById('no');
+if(no){no.onmouseover=()=>{no.style.position='absolute';no.style.left=Math.random()*80+'vw';no.style.top=Math.random()*80+'vh';};}
+const words=['Beautiful','Cute','My Sunshine','Pretty Girl','I Love You','Future Wife'];
+for(let j=0;j<120;j++){let e=document.createElement('div');e.className='float';e.innerText=words[Math.floor(Math.random()*words.length)];e.style.left=Math.random()*100+'vw';e.style.top=Math.random()*100+'vh';document.body.appendChild(e);}
 </script>
-
 </body>
 </html>
