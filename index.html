@@ -58,33 +58,6 @@ html+=`<div class="page">
 <div class="overlay"></div>
 <div class="counter">${i}/10</div>
 <img class="photo" src="images/foto${i}.jpg">
-function typeWriter(element){
-
-if(!element)return;
-
-const text = element.dataset.text;
-
-let i = 0;
-
-element.innerHTML = "";
-
-const timer = setInterval(()=>{
-
-element.innerHTML += text.charAt(i);
-
-i++;
-
-if(i >= text.length){
-clearInterval(timer);
-}
-
-},40);
-
-}
-<p class="typing" data-text="${messages[i-1]}"></p>
-<button class="btn" onclick="nextPage()">Next ❤️</button>
-</div>`;
-}
 
 html+=`
 <div class="page">
