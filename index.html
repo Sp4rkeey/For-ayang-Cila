@@ -110,7 +110,18 @@ if(current<pages.length-1) show(current+1);
 }
 
 function startStory(){
-document.getElementById('bgMusic').play().catch(()=>{});
+
+const music = document.getElementById("bgMusic");
+
+music.muted = false;
+music.volume = 1;
+
+music.play().then(()=>{
+console.log("Music playing");
+}).catch(err=>{
+alert("Music error: " + err);
+});
+
 nextPage();
 }
 
