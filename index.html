@@ -1,1 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Cila ❤️</title>
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#12000f,#25001d,#12000f);
+overflow:hidden;
+color:white;
+}
+
+.page{
+display:none;
+width:100vw;
+height:100vh;
+padding:30px;
+position:relative;
+}
+
+.active{
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.container{
+max-width:1100px;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:40px;
+}
+
+.text{
+width:45%;
+}
+
+.image{
+width:45%;
+display:flex;
+justify-content:center;
+}
+
+.image img{
+width:100%;
+max-width:380px;
+border-radius:20px;
+box-shadow:0 0 30px rgba(255,105,180,.5);
+}
+
+h1{
+font-size:3rem;
+margin-bottom:20px;
+color:#ffd6ea;
+}
+
+p{
+line-height:1.8;
+font-size:1.1rem;
+}
+
+.btn{
+margin-top:25px;
+padding:12px 28px;
+border:none;
+border-radius:30px;
+background:#ff5ea8;
+color:white;
+cursor:pointer;
+font-size:16px;
+box-shadow:0 0 20px rgba(255,105,180,.6);
+}
+
+.counter{
+position:absolute;
+top:20px;
+left:20px;
+font-size:14px;
+opacity:.8;
+}
+
+.floating{
+position:absolute;
+color:rgba(255,182,193,.3);
+font-size:14px;
+pointer-events:none;
+animation:float 10s linear infinite;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+to{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.center-page{
+text-align:center;
+width:100%;
+}
+
+.qr{
+width:250px;
+margin-top:20px;
+border-radius:20px;
+}
+
+#noBtn{
+position:absolute;
+}
+</style>
+</head>
+<body>
+
+<audio id="music" loop>
+<source src="music/perfect.mp3" type="audio/mpeg">
+</audio>
+
+<!-- OPENING -->
+
+<div class="page active">
+<div class="center-page">
+<h1>For You, Cila ❤️</h1>
+<p>I have something special I want to tell you.</p>
+<button class="btn" onclick="startStory()">Start ❤️</button>
+</div>
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page">
+<div class="counter">1 / 11</div>
+<div class="container">
+<div class="text">
+<p>
+From the moment I met you,
+something in my heart felt different.
+</p>
+<button class="btn" onclick="nextPage()">Next ➜</button>
+</div>
+<div class="image">
+<img src="images/foto1.jpg">
+</div>
+</div>
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page">
+<div class="counter">2 / 11</div>
+<div class="container">
+<div class="text">
+<p>
+Your smile can make my whole day better.
+</p>
+<button class="btn" onclick="nextPage()">Next ➜</button>
+</div>
+<div class="image">
+<img src="images/foto2.jpg">
+</div>
+</div>
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page">
+<div class="counter">3 / 11</div>
+<div class="container">
+<div class="text">
+<p>
+You are not perfect,
+but you are perfect for me.
+</p>
+<button class="btn" onclick="nextPage()">Next ➜</button>
+</div>
+<div class="image">
+<img src="images/foto3.jpg">
+</div>
+</div>
+</div>
+
+<!-- GALLERY -->
+
+<div class="page">
+<div class="counter">4 / 11</div>
+
+<div class="center-page">
+
+<h1>Every moment with you ❤️</h1>
+
+<div class="gallery">
+<img src="images/foto4.jpg">
+<img src="images/foto5.jpg">
+<img src="images/foto6.jpg">
+<img src="images/foto7.jpg">
+<img src="images/foto8.jpg">
+<img src="images/foto9.jpg">
+</div>
+
+<button class="btn" onclick="nextPage()">Next ➜</button>
+
+</div>
+</div>
+
+<!-- PAGE -->
+
+<div class="page">
+<div class="counter">5 / 11</div>
+<div class="container">
+<div class="text">
+<p>
+Thank you for being you.
+Thank you for making my life beautiful.
+</p>
+<button class="btn" onclick="nextPage()">Next ➜</button>
+</div>
+<div class="image">
+<img src="images/foto10.jpg">
+</div>
+</div>
+</div>
+
+<!-- LETTER -->
+
+<div class="page">
+<div class="counter">6 / 11</div>
+
+<div class="center-page">
+
+<h1>Just want you to know...</h1>
+
+<p>
+I truly appreciate you.<br>
+You mean so much to me.<br>
+I enjoy every second with you.<br>
+I could listen to your voice forever.<br><br>
+
+I don't know what the future holds,<br>
+but I know one thing...<br>
+I want to be in it with you ❤️
+</p>
+
+<button class="btn" onclick="nextPage()">Next ➜</button>
+
+</div>
+</div>
+
+<!-- QUESTION -->
+
+<div class="page">
+
+<div class="center-page">
+
+<h1>Will you be my girlfriend? ❤️</h1>
+
+<button class="btn" onclick="nextPage()">Yes, I will ❤️</button>
+
+<button class="btn" id="noBtn">No 😶</button>
+
+</div>
+
+</div>
+
+<!-- YES -->
+
+<div class="page">
+
+<div class="center-page">
+
+<h1>YEAYYYYY ❤️</h1>
+
+<p>
+You just made me the happiest person alive.
+</p>
+
+<button class="btn" onclick="nextPage()">Final Surprise 🎁</button>
+
+</div>
+
+</div>
+
+<!-- QR -->
+
+<div class="page">
+
+<div class="center-page">
+
+<h1>One More Thing ❤️</h1>
+
+<img src="images/qr.png" class="qr">
+
+<p>
+Thank you for reading until the end.
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+const pages=document.querySelectorAll(".page");
+let current=0;
+
+function showPage(i){
+pages.forEach(p=>p.classList.remove("active"));
+pages[i].classList.add("active");
+}
+
+function nextPage(){
+current++;
+if(current<pages.length){
+showPage(current);
+}
+}
+
+function startStory(){
+document.getElementById("music").play();
+nextPage();
+}
+
+const noBtn=document.getElementById("noBtn");
+
+function moveButton(){
+const x=Math.random()*300-150;
+const y=Math.random()*300-150;
+noBtn.style.transform=`translate(${x}px,${y}px)`;
+}
+
+noBtn.addEventListener("mouseover",moveButton);
+noBtn.addEventListener("click",moveButton);
+
+const words=[
+"Beautiful",
+"Gorgeous",
+"Perfect",
+"Lovely",
+"Adorable",
+"Pretty",
+"Sweet",
+"Precious",
+"My Sunshine",
+"Wonderful",
+"You are amazing",
+"You are enough"
+];
+
+setInterval(()=>{
+let e=document.createElement("div");
+e.className="floating";
+e.innerText=words[Math.floor(Math.random()*words.length)];
+e.style.left=Math.random()*100+"vw";
+document.body.appendChild(e);
+
+setTimeout(()=>{
+e.remove();
+},10000);
+
+},700);
+
+</script>
+
+</body>
+</html>
