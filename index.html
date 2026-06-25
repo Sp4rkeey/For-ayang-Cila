@@ -6,8 +6,6 @@
 <title>For Cila ❤️</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
 *{
 margin:0;
 padding:0;
@@ -16,381 +14,286 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#12000f,#25001d,#12000f);
+background:linear-gradient(135deg,#12000d,#2d0018,#450028);
 overflow:hidden;
 color:white;
+height:100vh;
 }
 
 .page{
 display:none;
-width:100vw;
 height:100vh;
-padding:30px;
-position:relative;
+width:100%;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:20px;
+text-align:center;
+animation:fade .8s;
 }
 
 .active{
 display:flex;
-align-items:center;
-justify-content:center;
 }
 
-.container{
-max-width:1100px;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:40px;
-}
-
-.text{
-width:45%;
-}
-
-.image{
-width:45%;
-display:flex;
-justify-content:center;
-}
-
-.image img{
-width:100%;
-max-width:380px;
-border-radius:20px;
-box-shadow:0 0 30px rgba(255,105,180,.5);
+@keyframes fade{
+from{opacity:0;transform:scale(.9);}
+to{opacity:1;transform:scale(1);}
 }
 
 h1{
 font-size:3rem;
+color:#ff9ac6;
+margin-bottom:15px;
+}
+
+h2{
+font-size:2rem;
 margin-bottom:20px;
-color:#ffd6ea;
 }
 
 p{
+max-width:700px;
+font-size:1.2rem;
 line-height:1.8;
-font-size:1.1rem;
 }
 
-.btn{
-margin-top:25px;
-padding:12px 28px;
+img{
+width:280px;
+height:380px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 0 30px #ff4d94;
+margin-bottom:20px;
+}
+
+button{
+padding:15px 35px;
+font-size:18px;
 border:none;
-border-radius:30px;
-background:#ff5ea8;
-color:white;
+border-radius:50px;
 cursor:pointer;
-font-size:16px;
-box-shadow:0 0 20px rgba(255,105,180,.6);
+background:#ff4d94;
+color:white;
+margin:10px;
+box-shadow:0 0 20px #ff4d94;
 }
 
-.counter{
-position:absolute;
-top:20px;
-left:20px;
-font-size:14px;
-opacity:.8;
+button:hover{
+transform:scale(1.1);
 }
 
 .floating{
 position:absolute;
-color:rgba(255,182,193,.3);
-font-size:14px;
-pointer-events:none;
+color:#ff9ac6;
+font-size:15px;
 animation:float 10s linear infinite;
+opacity:.8;
 }
 
 @keyframes float{
-from{
+0%{
+transform:translateY(100vh);
+}
+100%{
+transform:translateY(-100px);
+}
+}
+
+.heart{
+position:absolute;
+font-size:25px;
+animation:heart 8s linear infinite;
+}
+
+@keyframes heart{
+0%{
 transform:translateY(100vh);
 opacity:0;
 }
-20%{
+100%{
+transform:translateY(-100px);
 opacity:1;
 }
-to{
-transform:translateY(-120vh);
-opacity:0;
-}
-}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-margin-top:20px;
-}
-
-.gallery img{
-width:100%;
-height:150px;
-object-fit:cover;
-border-radius:12px;
-}
-
-.center-page{
-text-align:center;
-width:100%;
-}
-
-.qr{
-width:250px;
-margin-top:20px;
-border-radius:20px;
 }
 
 #noBtn{
 position:absolute;
 }
+
 </style>
 </head>
+
 <body>
 
-<audio id="music" loop>
+<audio autoplay loop>
 <source src="music/perfect.mp3" type="audio/mpeg">
 </audio>
 
-<!-- OPENING -->
+<div id="floatingContainer"></div>
 
-<div class="page active">
-<div class="center-page">
+<div class="page active" id="page0">
 <h1>For You, Cila ❤️</h1>
-<p>I have something special I want to tell you.</p>
-<button class="btn" onclick="startStory()">Start ❤️</button>
-</div>
-</div>
+<p>
+I have something special to tell you...
+</p>
 
-<!-- PAGE 2 -->
+<br>
+
+<h3>Sent by your future, Fadel 💕</h3>
+
+<br>
+
+<button onclick="nextPage()">Open My Heart ❤️</button>
+</div>
 
 <div class="page">
-<div class="counter">1 / 11</div>
-<div class="container">
-<div class="text">
-<p>
-From the moment I met you,
-something in my heart felt different.
-</p>
-<button class="btn" onclick="nextPage()">Next ➜</button>
-</div>
-<div class="image">
 <img src="images/foto1.jpg">
+<p>Every time I see your smile, my whole day becomes better.</p>
+<button onclick="nextPage()">Next ❤️</button>
 </div>
-</div>
-</div>
-
-<!-- PAGE 3 -->
 
 <div class="page">
-<div class="counter">2 / 11</div>
-<div class="container">
-<div class="text">
-<p>
-Your smile can make my whole day better.
-</p>
-<button class="btn" onclick="nextPage()">Next ➜</button>
-</div>
-<div class="image">
 <img src="images/foto2.jpg">
+<p>You are one of the most beautiful people I've ever met.</p>
+<button onclick="nextPage()">Next ❤️</button>
 </div>
-</div>
-</div>
-
-<!-- PAGE 4 -->
 
 <div class="page">
-<div class="counter">3 / 11</div>
-<div class="container">
-<div class="text">
-<p>
-You are not perfect,
-but you are perfect for me.
-</p>
-<button class="btn" onclick="nextPage()">Next ➜</button>
-</div>
-<div class="image">
 <img src="images/foto3.jpg">
+<p>I don't know how, but you always make my heart feel calm.</p>
+<button onclick="nextPage()">Next ❤️</button>
 </div>
-</div>
-</div>
-
-<!-- GALLERY -->
 
 <div class="page">
-<div class="counter">4 / 11</div>
-
-<div class="center-page">
-
-<h1>Every moment with you ❤️</h1>
-
-<div class="gallery">
 <img src="images/foto4.jpg">
+<p>You are cute, kind, funny and amazing.</p>
+<button onclick="nextPage()">Next ❤️</button>
+</div>
+
+<div class="page">
 <img src="images/foto5.jpg">
+<p>Thank you for existing in my life.</p>
+<button onclick="nextPage()">Next ❤️</button>
+</div>
+
+<div class="page">
 <img src="images/foto6.jpg">
+<p>If I had to choose again, I'd still choose you.</p>
+<button onclick="nextPage()">Next ❤️</button>
+</div>
+
+<div class="page">
 <img src="images/foto7.jpg">
+<p>You make ordinary moments feel special.</p>
+<button onclick="nextPage()">Next ❤️</button>
+</div>
+
+<div class="page">
 <img src="images/foto8.jpg">
+<p>I could spend hours talking to you and never get bored.</p>
+<button onclick="nextPage()">Next ❤️</button>
+</div>
+
+<div class="page">
 <img src="images/foto9.jpg">
+<p>You are my favorite notification.</p>
+<button onclick="nextPage()">Next ❤️</button>
 </div>
-
-<button class="btn" onclick="nextPage()">Next ➜</button>
-
-</div>
-</div>
-
-<!-- PAGE -->
 
 <div class="page">
-<div class="counter">5 / 11</div>
-<div class="container">
-<div class="text">
-<p>
-Thank you for being you.
-Thank you for making my life beautiful.
-</p>
-<button class="btn" onclick="nextPage()">Next ➜</button>
-</div>
-<div class="image">
 <img src="images/foto10.jpg">
+<p>And now I want to ask something important...</p>
+<button onclick="nextPage()">Continue ❤️</button>
 </div>
-</div>
-</div>
-
-<!-- LETTER -->
 
 <div class="page">
-<div class="counter">6 / 11</div>
+<h1>Will You Be My Girlfriend? ❤️</h1>
 
-<div class="center-page">
+<button onclick="nextPage()">YESSS 💕</button>
+<button id="noBtn">NO 😝</button>
+</div>
 
-<h1>Just want you to know...</h1>
+<div class="page">
+<h1>One More Question ❤️</h1>
+
+<h2>Will You Be My Wife? 💍</h2>
+
+<button onclick="nextPage()">OF COURSE 💖</button>
+</div>
+
+<div class="page">
+<h1>YAYYYYYY ❤️</h1>
 
 <p>
-I truly appreciate you.<br>
-You mean so much to me.<br>
-I enjoy every second with you.<br>
-I could listen to your voice forever.<br><br>
-
-I don't know what the future holds,<br>
-but I know one thing...<br>
-I want to be in it with you ❤️
+You just made me the happiest person in the world.
+<br><br>
+I promise I'll always care about you,
+support you,
+and make lots of beautiful memories together.
+<br><br>
+I Love You, Cila ❤️
 </p>
 
-<button class="btn" onclick="nextPage()">Next ➜</button>
-
-</div>
-</div>
-
-<!-- QUESTION -->
-
-<div class="page">
-
-<div class="center-page">
-
-<h1>Will you be my girlfriend? ❤️</h1>
-
-<button class="btn" onclick="nextPage()">Yes, I will ❤️</button>
-
-<button class="btn" id="noBtn">No 😶</button>
-
-</div>
-
-</div>
-
-<!-- YES -->
-
-<div class="page">
-
-<div class="center-page">
-
-<h1>YEAYYYYY ❤️</h1>
-
-<p>
-You just made me the happiest person alive.
-</p>
-
-<button class="btn" onclick="nextPage()">Final Surprise 🎁</button>
-
-</div>
-
-</div>
-
-<!-- QR -->
-
-<div class="page">
-
-<div class="center-page">
-
-<h1>One More Thing ❤️</h1>
-
-<img src="images/qr.png" class="qr">
-
-<p>
-Thank you for reading until the end.
-</p>
-
-</div>
-
+<h2>- Fadel 💕</h2>
 </div>
 
 <script>
 
-const pages=document.querySelectorAll(".page");
 let current=0;
-
-function showPage(i){
-pages.forEach(p=>p.classList.remove("active"));
-pages[i].classList.add("active");
-}
+const pages=document.querySelectorAll(".page");
 
 function nextPage(){
+pages[current].classList.remove("active");
 current++;
-if(current<pages.length){
-showPage(current);
-}
+pages[current].classList.add("active");
 }
 
-function startStory(){
-document.getElementById("music").play();
-nextPage();
+const words=[
+"I Love You ❤️",
+"You Are Beautiful ❤️",
+"Cila ❤️",
+"Future Wife 💍",
+"My Sunshine ☀️",
+"You Are Cute 💕",
+"My Favorite Person ❤️",
+"Pretty Girl 🌸",
+"Sweet Girl ❤️",
+"Forever ❤️",
+"Fadel ❤️ Cila",
+"You Are Amazing 💕",
+"My Happiness ❤️"
+];
+
+for(let i=0;i<80;i++){
+let span=document.createElement("span");
+span.className="floating";
+span.innerHTML=words[Math.floor(Math.random()*words.length)];
+span.style.left=Math.random()*100+"%";
+span.style.animationDuration=(6+Math.random()*8)+"s";
+document.body.appendChild(span);
+}
+
+for(let i=0;i<40;i++){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💖";
+heart.style.left=Math.random()*100+"%";
+heart.style.animationDuration=(4+Math.random()*6)+"s";
+document.body.appendChild(heart);
 }
 
 const noBtn=document.getElementById("noBtn");
 
-function moveButton(){
-const x=Math.random()*300-150;
-const y=Math.random()*300-150;
-noBtn.style.transform=`translate(${x}px,${y}px)`;
-}
+noBtn.addEventListener("mouseover",()=>{
+noBtn.style.top=Math.random()*80+"%";
+noBtn.style.left=Math.random()*80+"%";
+});
 
-noBtn.addEventListener("mouseover",moveButton);
-noBtn.addEventListener("click",moveButton);
-
-const words=[
-"Beautiful",
-"Gorgeous",
-"Perfect",
-"Lovely",
-"Adorable",
-"Pretty",
-"Sweet",
-"Precious",
-"My Sunshine",
-"Wonderful",
-"You are amazing",
-"You are enough"
-];
-
-setInterval(()=>{
-let e=document.createElement("div");
-e.className="floating";
-e.innerText=words[Math.floor(Math.random()*words.length)];
-e.style.left=Math.random()*100+"vw";
-document.body.appendChild(e);
-
-setTimeout(()=>{
-e.remove();
-},10000);
-
-},700);
+noBtn.addEventListener("click",()=>{
+noBtn.style.top=Math.random()*80+"%";
+noBtn.style.left=Math.random()*80+"%";
+});
 
 </script>
 
